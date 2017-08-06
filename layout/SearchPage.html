@@ -1,0 +1,326 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>MovieFlix</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+       
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type = "text/css" href="css/HomePage.css">
+        <link rel="stylesheet" type = "text/css" href="css/SearchPage.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="fluid-container search-sort-container body-container">
+             <header class="header-background">
+                <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 splitter">-->
+                    <nav>
+                        <!--<a class="anchor" href="#" id="menu-icon"></a>-->
+                        <button type="button" class="btn btn-default anchor" id="menu-icon" >
+                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        </button>
+                        <ul style="padding:0px; list-style-type: none">
+                            <li><a href="#" class="current">Home</a></li>
+                            <li><a href="#Signout">SignOut</a></li>
+                            <li><a href="#home">Home</a></li>
+                        </ul>
+
+                    </nav>
+                    <h1 class="header-main-title">MovieFlix</h1>
+                <!--</div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 splitter">-->
+                    
+                    <div class="dropdown header-page-selection">
+                        <a id="dLabelHome" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu homeMenu" aria-labelledby="dLabelHome">
+                            <li><a href="#Account">Account</a></li>
+                            <li><a href="#Signout">SignOut</a></li>
+                            <li><a href="#home">Home</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="search-text" placeholder="Search"/>
+                <!--</div>-->
+            </header>
+            <div class="search-sort-title-container row ">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 border-check" >
+                    <h2>Documentaries</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  border-check">
+                    <div class="dropdown sortbyDownload">
+                        <button id="dLabelSortBy" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort by
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu sortby-ul" aria-labelledby="dLabelSortBy">
+                            <li><a href="#">Year Released</a></li>
+                            <li><a href="#">A-Z</a></li>
+                            <li><a href="#">Z-A</a></li>
+                        </ul>
+                    </div>
+                    <h5>Sorted By: Year Released</h5>
+                </div>
+            </div>
+            <div class="search-sort-result-container row ">
+                <ul class="result-ul">
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/airlift.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/avengers.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/interstellar.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/madmux.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/martian.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/revanent.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/spectre.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                        <img class="result-movie-images" src="images/godfather.jpg"/>
+                        <div class="bottom-arrow result-bottom-arrow">
+                            <a  role="button" data-toggle="collapse" href="#collapseExample3"  aria-controls="collapseExample3">
+                                <span class="glyphicon glyphicon-chevron-down arrow-down" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+               </section>
+               <div class="collapse movie-details-container result-set-details-container row" id="collapseExample3">
+                    <span class="movie-detail-closer" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">X</span>
+                    <h1 class="details-header">Avengers</h1>
+                    
+                    <div class="col-lg-2 col-md-2 col-sm-2 movie-details-sub-section">
+                        <div class="movie-listing">
+                            <h4>Director</h4>
+                            <ul>
+                                <li>Joss Whedon</li>
+                            </ul>
+                        </div>
+                        <div class="movie-listing">
+                            <h4>Released</h4>
+                            <ul>
+                                <li>2015-05-01</li>
+                            </ul>
+                        </div>
+                        <div class="movie-listing">
+                            <h4>Language</h4>
+                            <ul>
+                                <li>English</li>
+                            </ul>
+                        </div>
+                        <div class="movie-listing">
+                            <h4>Country</h4>
+                            <ul>
+                                <li>USA</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 movie-details-sub-section">
+                        <div class="movie-listing">
+                            <h4>Cast</h4>
+                            <ul>
+                                <li>Robert Downey Jr</li>
+                                <li>Chris Hemsworth</li>
+                                <li>Mark Ruffalo</li>
+                                <li> Chris Evans</li>
+                            </ul>
+                        </div>
+                        <div class="movie-listing">
+                            <h4>Awards</h4>
+                            <ul>
+                                <li>1 win & 12 nominations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 movie-details-sub-section">
+                        <div class="movie-listing">
+                            <h4>Genre</h4>
+                            <ul>
+                                <li>Action</li>
+                                <li>Adventure</li>
+                                <li>Sci-Fri</li>
+                            </ul>
+                        </div>
+                            
+                        <div class="movie-listing">
+                            <h4>Imdb Rating</h4>
+                            <ul>
+                                <li>8.1</li>
+                            </ul>
+                        </div>
+                        <div class="movie-listing">
+                            <h4>Imdb Votes</h4>
+                            <ul>
+                                <li>399096</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 movie-details-sub-section">
+                        <div class="movie-listing movie-review-listing">
+                            <h4>Member Reviews</h4>
+                            <ul class="member-reviews-ul">
+                                <li>
+                                    <img class="starRating" src="images/stars.jpg"/>
+                                    <div class="movie-review-listing-span">
+                                        <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                    </div>
+                                </li>
+                                    <li>
+                                    <img class="starRating" src="images/stars.jpg"/>
+                                    <div class="movie-review-listing-span">
+                                        <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                    </div>
+                                </li>
+                                    <li>
+                                    <img class="starRating" src="images/stars.jpg"/>
+                                    <div class="movie-review-listing-span">
+                                        <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img class="starRating" src="images/stars.jpg"/>
+                                    <div class="movie-review-listing-span">
+                                        <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img class="starRating" src="images/stars.jpg"/>
+                                    <div class="movie-review-listing-span">
+                                        <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a style="color:white;cursor:pointer"   href="#" role="button" data-toggle="modal" data-target=".bs-example-modal-lg">See All Reviews (1482)</a>
+                    </div>
+                    <h3 class="details-footer">DETAILS</h3>     
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bs-example-modal-lg custom-modal " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content custom-modal-content">
+                    <div class="modal-header custom-modal-header">
+                        <!--<button type="button" class="close " data-dismiss="modal" aria-label="Close"><span class="custom-close" aria-hidden="true">&times;</span></button>-->
+                         <span class="movie-detail-closer custome-modal-closer" aria-hidden="true" data-dismiss="modal" aria-label="Close">&times;</span>
+                        
+                        <h2 class="modal-title custom-modal-title">Member Reviews for Avengers</h2>
+                        <h4 style="margin-top:30px">Rate this Tite:</h4>
+                        <img class="unstarred-class" src="images/unstarted.png" />
+                        <form style="margin-bottom:30px">
+                            <div class="form-group">
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                            <button type="button" class="btn btn-default">Cancel</button>
+                        </form>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Reviews Voted Most Helpful</h3>
+                        <ul class="member-reviews-ul modal-reviews-ul">
+                            <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>-->
+                </div> 
+            </div>
+        </div>
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

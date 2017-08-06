@@ -1,0 +1,205 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>MovieFlix</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" type = "text/css" href="css/HomePage.css">
+        <link rel="stylesheet" type = "text/css" href="css/MovieDetailsPage.css">
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+         <div class="fluid-container mdp-container body-container">
+             <header class="header-background">
+                <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 splitter">-->
+                    <nav>
+                        <!--<a class="anchor" href="#" id="menu-icon"></a>-->
+                        <button type="button" class="btn btn-default anchor" id="menu-icon" >
+                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        </button>
+                        <ul style="padding:0px; list-style-type: none">
+                            <li><a href="#" class="current">Home</a></li>
+                            <li><a href="#Signout">SignOut</a></li>
+                            <li><a href="#home">Home</a></li>
+                        </ul>
+
+                    </nav>
+                    <h1 class="header-main-title">MovieFlix</h1>
+                <!--</div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 splitter">-->
+                    
+                    <div class="dropdown header-page-selection">
+                        <a id="dLabelHome" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu homeMenu" aria-labelledby="dLabelHome">
+                            <li><a href="#Account">Account</a></li>
+                            <li><a href="#Signout">SignOut</a></li>
+                            <li><a href="#home">Home</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="search-text" placeholder="Search"/>
+                <!--</div>-->
+            </header>
+             <article class="mdp-container-content ">
+                 <!--<h1>Avengers</h1>-->
+                 <div class="row mdp-sub-content">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-container">
+                         <img src="images/avengers.jpg"/>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
+                         <h1 class="mdp-title">Avengers</h1>
+                         <div class="row">
+                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                                <div class="movie-breif-details">
+                                    <h4>Director</h4>
+                                    <ul>
+                                        <li>Joss Whedon</li>
+                                    </ul>
+                                </div>
+                                <div class="movie-breif-details">
+                                    <h4>Released</h4>
+                                    <ul>
+                                        <li>2015-05-01</li>
+                                    </ul>
+                                </div>
+                                <div class="movie-breif-details">
+                                    <h4>Country</h4>
+                                    <ul>
+                                        <li>USA</li>
+                                    </ul>
+                                </div>
+                             </div>
+                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                                <div class="movie-breif-details">
+                                    <h4>Actors</h4>
+                                    <ul>
+                                        <li>Rober Downey Jr</li>
+                                        <li>Chris Hemsworth</li>
+                                        <li>Mark Ruffalo</li>
+                                        <li>Chris Evans</li>
+                                    </ul>
+                                </div>
+                                <div class="movie-breif-details">
+                                    <h4>Language</h4>
+                                    <ul>
+                                        <li>English</li>
+                                    </ul>
+                                </div>
+                             </div>
+                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                                
+                                <div class="movie-breif-details">
+                                    <h4>Awards</h4>
+                                    <ul>
+                                        <li>1 win & 12 nominations.</li>
+                                    </ul>
+                                </div>
+                                <div class="movie-breif-details">
+                                    <h4>Imdb Rating</h4>
+                                    <ul>
+                                        <li>7.6</li>
+                                    </ul>
+                                </div>
+                                <div class="movie-breif-details">
+                                    <h4>Imdb Votes</h4>
+                                    <ul>
+                                        <li>370909</li>
+                                    </ul>
+                                </div>
+
+                             </div>
+                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                                 <div class="movie-breif-details">
+                                    <h4>Genre</h4>
+                                    <ul>
+                                        <li>Action</li>
+                                        <li>Adventure</li>
+                                        <li>Sci-Fi</li>
+                                    </ul>
+                                </div>
+                                 <div class="movie-breif-details">
+                                    <h4>Writer</h4>
+                                    <ul>
+                                        <li>Joss Whedon</li>
+                                        <li>Stan Lee (Marvel comics)</li>
+                                        <li>Jack Kirby </li>
+                                    </ul>
+                                </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="modal-content custom-modal-content mdp-comment-container">
+                    <div class="modal-header custom-modal-header"> 
+                        <h2 class="modal-title custom-modal-title">Member Reviews for Avengers</h2>
+                        <h4 style="margin-top:30px">Rate this Tite:</h4>
+                        <img class="unstarred-class" src="images/unstarted.png" />
+                        <form style="margin-bottom:30px">
+                            <div class="form-group">
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                            <button type="button" class="btn btn-default">Cancel</button>
+                        </form>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Reviews Voted Most Helpful</h3>
+                        <ul class="member-reviews-ul modal-reviews-ul">
+                            <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsvcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                             <li>
+                                <img class="starRating modal-start-rating" src="images/stars.jpg"/>
+                                <div class="movie-review-listing-span modal-reviews-li-span">
+                                    <span>sfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjhsfsdfsdfasfsa dfdadfadfzjhcvvja  svcjascjas cjascvajsvcjasv scjascjhav scjhvasjc  vajsvc jhasvcj   hasvcjhavsjchv  ajscvajsvcjh  avcvjh</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </article>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+    </body>
+</html>
