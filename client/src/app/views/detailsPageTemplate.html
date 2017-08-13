@@ -132,7 +132,7 @@
     <div class="modal-content custom-modal-content mdp-comment-container">
         <div class="modal-header custom-modal-header">
             <h2 class="modal-title custom-modal-title">Member Reviews for {{dc.movieDetails.title}}</h2>
-            <h4 style="margin-top:30px">Rate this Tite:</h4>
+            <h4 style="margin-top:30px">Add a Review:</h4>
             <form style="margin-bottom:30px">
                 <div class="form-group">
                     <textarea class="form-control" ng-model="dc.commentContent" id="message-text"></textarea>
@@ -141,7 +141,7 @@
             </form>
         </div>
         <div class="modal-body" ng-show="dc.movieComments.length != 0">
-            <h3 >Reviews Voted Most Helpful</h3>
+            <h3 >Latest Reviews</h3>
             <ul class="member-reviews-ul modal-reviews-ul">
                 <li ng-repeat="uc in dc.movieComments | orderBy:uc.time">
                     <div class="movie-review-listing-span modal-reviews-li-span">

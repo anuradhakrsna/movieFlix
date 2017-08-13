@@ -24,7 +24,7 @@
         };
 
         self.getTopRatedSeries = function () {
-            return $http.get(CONFIG.API_HOST + '/movies/toprated').then(function (response) {
+            return $http.get(CONFIG.API_HOST + '/movies/toprated?type=series').then(function (response) {
                 return response.data;
             }, function (error) {
                 return $q.reject(error.status);
