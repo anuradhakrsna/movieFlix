@@ -1,0 +1,157 @@
+<link rel="stylesheet" type = "text/css" href="styles/MovieDetailsPage.css">
+<link rel="stylesheet" type = "text/css" href="styles/star.css">
+
+<header class="header-background">
+    <nav>
+        <button type="button" class="btn btn-default anchor" id="menu-icon" >
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </button>
+        <ul style="padding:0px; list-style-type: none">
+            <li><a href="#/userAccountPage" class="current">Account</a></li>
+            <li><a  data-toggle="modal" data-target="#signoutModal">SignOut</a></li>
+            <li><a href="#/homePage">Home</a></li>
+        </ul>
+
+    </nav>
+    <h1 class="header-main-title">MovieFlix</h1>
+
+    <div class="dropdown header-page-selection" ng-init="menuVal='Home'" >
+        <a id="dLabelHome" data-target="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{menuVal}}
+            <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu homeMenu" aria-labelledby="dLabelHome">
+            <li ng-click="menuVal='Account'"><a href="#/userAccountPage">Account</a></li>
+            <li ><a  data-toggle="modal" data-target="#signoutModal">SignOut</a></li>
+            <li ng-click="menuVal='Home'"><a href="#/homePage">Home</a></li>
+        </ul>
+    </div>
+
+</header>
+
+<article class="mdp-container-content ">
+    <div class="row mdp-sub-content">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-container">
+            <img src="{{dc.movieDetails.poster}}"/>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
+
+
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <h1 class="mdp-title">{{dc.movieDetails.title}} </h1>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style=" padding-top: 17px;text-align: center;">
+
+                    <fieldset class="rate" value="4">
+                        <input type="radio" id="rating5" name="rating" value="5" ng-click="dc.saveRating(5)" /><label for="rating5" title="5 stars"></label>
+                        <input type="radio" id="rating4" name="rating" value="4" ng-click="dc.saveRating(4)" /><label for="rating4" title="4 stars"></label>
+                        <input type="radio" id="rating3" name="rating" value="3" ng-click="dc.saveRating(3)" /><label for="rating3" title="3 stars"></label>
+                        <input type="radio" id="rating2" name="rating" value="2" ng-click="dc.saveRating(2)" /><label for="rating2" title="2 stars"></label>
+                        <input type="radio" id="rating1" name="rating" value="1" ng-click="dc.saveRating(1)" /><label for="rating1" title="1 star"></label>
+                        <input type="radio" ng-hide="true" id="rating0" name="rating" value="1" ng-click="dc.saveRating(0)" /><label ng-hide="true" for="rating0" title="0 star"></label>
+                    </fieldset>
+                    <h6 style="margin-top:-5px; color:grey"> Average Rating : {{dc.averageRatings}}</h6>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                    <div class="movie-breif-details">
+                        <h4>Director</h4>
+                        <ul>
+                            <li>{{dc.movieDetails.director[0].director}}</li>
+                        </ul>
+                    </div>
+                    <div class="movie-breif-details">
+                        <h4>Released</h4>
+                        <ul>
+                            <li>{{dc.movieDetails.released}}</li>
+                        </ul>
+                    </div>
+                    <div class="movie-breif-details">
+                        <h4>Country</h4>
+                        <ul>
+                            <li ng-repeat="md in dc.movieDetails.country">{{md.country}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                    <div class="movie-breif-details">
+                        <h4>Actors</h4>
+                        <ul>
+                            <li ng-repeat="md in dc.movieDetails.actors">{{md.actor}}</li>
+                        </ul>
+                    </div>
+                    <div class="movie-breif-details">
+                        <h4>Language</h4>
+                        <ul>
+                            <li ng-repeat="md in dc.movieDetails.language">{{md.language}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+
+                    <div class="movie-breif-details">
+                        <h4>Awards</h4>
+                        <ul>
+                            <li>{{dc.movieDetails.awards}}</li>
+                        </ul>
+                    </div>
+                    <div class="movie-breif-details">
+                        <h4>Imdb Rating</h4>
+                        <ul>
+                            <li>{{dc.movieDetails.imdb.imdbRating}}</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 details-col">
+                    <div class="movie-breif-details">
+                        <h4>Genre</h4>
+                        <ul>
+                            <li ng-repeat="md in dc.movieDetails.genre">{{md.genre}}</li>
+                        </ul>
+                    </div>
+                    <div class="movie-breif-details">
+                        <h4>Imdb Votes</h4>
+                        <ul>
+                            <li>{{dc.movieDetails.imdb.imdbVotes}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal-content custom-modal-content mdp-comment-container">
+        <div class="modal-header custom-modal-header">
+            <h2 class="modal-title custom-modal-title">Member Reviews for {{dc.movieDetails.title}}</h2>
+            <h4 style="margin-top:30px">Rate this Tite:</h4>
+            <form style="margin-bottom:30px">
+                <div class="form-group">
+                    <textarea class="form-control" ng-model="dc.commentContent" id="message-text"></textarea>
+                </div>
+                <button type="submit" ng-click="dc.addComment()" class="btn btn-danger" ng-disabled="dc.commentContent.length == 0">Submit</button>
+            </form>
+        </div>
+        <div class="modal-body" ng-show="dc.movieComments.length != 0">
+            <h3 >Reviews Voted Most Helpful</h3>
+            <ul class="member-reviews-ul modal-reviews-ul">
+                <li ng-repeat="uc in dc.movieComments | orderBy:uc.time">
+                    <div class="movie-review-listing-span modal-reviews-li-span">
+                        <span style="width:82%">{{uc.comments}}</span>
+                        <span style="float:right">{{uc.time | date:'mediumDate'}}</span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</article>

@@ -1,0 +1,78 @@
+<link rel="stylesheet" type = "text/css" href="styles/AccountPage.css">
+<header class="header-background">
+    <h1 class="header-main-title">MovieFlix</h1>
+    <a type="button" href="#/loginPage" class="btn btn-primary signin-btn">Sign In</a>
+</header>
+<section class="accountUpdate-container">
+    <h1 class="account-h1">Sign Up Account Details</h1>
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-lg-offset-3  col-sm-8 col-xs-12" >
+            <form class="form-horizontal" name="signUpForm" ng-init="lc.cleanup=false" ng-submit="lc.addUser()" novalidate >
+                <div class="form-group">
+                    <label for="inputFN3" class="col-sm-4 control-label">First Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="firstName" id="inputFN3" ng-model="lc.user.firstName" placeholder="eg.Harry" required>
+                    </div>
+                    <div ng-messages="signUpForm.firstName.$error" ng-show="signUpForm.firstName.$invalid" ng-hide="signUpForm.firstName.$valid ">
+                        <p ng-message="required" class="errorMsg" ng-hide="lc.user.firstName.length!=0 || lc.cleanup">Please enter your first name. </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputLN3" class="col-sm-4 control-label">Last Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="lastName" id="inputLN3" ng-model="lc.user.lastName" placeholder="eg.Potter"  required>
+                    </div>
+                    <div ng-messages="signUpForm.lastName.$error" ng-show="signUpForm.lastName.$invalid" ng-hide="signUpForm.lastName.$valid || lc.user.lastName.length!=0 || lc.cleanup">
+                        <p ng-message="required" class="errorMsg"  ng-hide="lc.user.lastName.length!=0 || lc.cleanup">Please enter your last name. </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" class="form-control" name="emailInput" id="inputEmail3" ng-model="lc.user.email" placeholder="Email"  required>
+                    </div>
+                    <div ng-if="signUpForm.emailInput.$dirty" ng-hide="signUpForm.emailInput.$valid || lc.cleanup ">
+                        <p ng-show="signUpForm.emailInput.$error.required" class="errorMsg">Please enter your email address. </p>
+                        <p ng-show="signUpForm.emailInput.$error.email" class="errorMsg">Please enter a valid email address. </p>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="password" id="inputPassword3" ng-model="lc.user.password" minlength="6" placeholder="Password"  required>
+                    </div>
+                    <div ng-messages="signUpForm.password.$error" ng-if="signUpForm.password.$dirty" ng-hide="signUpForm.password.$valid || lc.cleanup">
+                        <p ng-message="required" class="errorMsg" ng-hide="lc.user.password.length!=0 || lc.cleanup">Please enter your Password. </p>
+                        <p ng-message="minlength" class="errorMsg" ng-hide="lc.user.password.length>=6 || lc.cleanup">The password should have at least 6 characters. </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword4" class="col-sm-4 control-label">Confirm Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="confirmPassword" id="inputPassword4" ng-model="lc.user.cpassword" minlength="6" placeholder="Password"  required>
+                    </div>
+                    <div ng-messages="signUpForm.confirmPassword.$error" ng-if="signUpForm.confirmPassword.$dirty" ng-hide="signUpForm.confirmPassword.$valid || lc.cleanup ">
+                        <p ng-message="required" class="errorMsg" ng-hide="lc.user.cpassword.length!=0 || lc.cleanup">Please enter your confirm password. </p>
+                        <p ng-message="minlength" class="errorMsg" ng-hide="lc.user.cpassword.length>=6 || lc.cleanup">The confirm password should have at least 6 characters. </p>
+
+                    </div>
+                    <p ng-show="lc.addUser.cpassword!=lc.addUser.password && signUpForm.confirmPassword.$dirty " class="errorMsg">Your Password and confirm Password should be same </p>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-7 col-md-offset-7 col-sm-offset-4 col-xs-offset-4 col-sm-10">
+                        <button type="submit"  class="btn btn-default"  ng-click="lc.cleanup=true" ng-disabled=" signUpForm.$invalid || lc.user.cpassword!=lc.user.password ">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+            <div class="alert alert-success" ng-show="lc.successMsg" role="alert">
+                <strong>Congratulations!</strong> You are successfully a member of MovieFlix. <strong>Please SignIn !</strong>
+            </div>
+            <div class="alert alert-danger" ng-show="lc.errorMsg" role="alert">
+                <strong>Oh snap!</strong> Already a user exists with the same credentials!.
+            </div>
+        </div>
+    </div>
+
+</section>

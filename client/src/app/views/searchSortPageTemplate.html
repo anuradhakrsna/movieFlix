@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="styles/SearchPage.css">
+<header class="header-background">
+    <nav>
+        <button type="button" class="btn btn-default anchor" id="menu-icon">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </button>
+        <ul style="padding:0px; list-style-type: none">
+            <li><a href="#/userAccountPage" class="current">Account</a></li>
+            <li><a data-toggle="modal" data-target="#signoutModal">SignOut</a></li>
+            <li><a href="#/homePage">Home</a></li>
+        </ul>
+
+    </nav>
+    <h1 class="header-main-title">MovieFlix</h1>
+
+    <div class="dropdown header-page-selection">
+        <a id="dLabelHome" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
+           aria-expanded="false">Home
+            <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu homeMenu" aria-labelledby="dLabelHome">
+            <li><a href="#/userAccountPage">Account</a></li>
+            <li><a data-toggle="modal" data-target="#signoutModal">SignOut</a></li>
+            <li><a href="#/homePage">Home</a></li>
+        </ul>
+    </div>
+
+</header>
+<div class="search-sort-title-container row ">
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 border-check">
+        <h2>{{ssc.searchTitle}}</h2>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  border-check">
+        <div class="dropdown sortbyDownload">
+            <select class="sortby-ul" ng-model="sortOrderProp" placeholder="Sort By">
+                <option value="" disabled selected>Sort By</option>
+                <option value="released">Year Released</option>
+                <option value="title">A-Z</option>
+                <option value="-title">Z-A</option>
+            </select>
+        </div>
+        <input type="text" ng-focus="showSuggestions = true" ng-blur="showSuggestions = false" ng-model="searchText"
+               class="search-text" placeholder="Search"/>
+    </div>
+</div>
+<div class="search-sort-result-container row ">
+    <h3 class="search-result" ng-show="showSuggestions">Search Results for : {{searchText}}</h3>
+    <ul class="result-ul">
+        <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6"
+            ng-repeat="movie in ssc.movieList | filter:searchText | orderBy:sortOrderProp">
+            <img class="result-movie-images" ng-src="{{movie.poster}}"/>
+        </li>
+    </ul>
+</div>

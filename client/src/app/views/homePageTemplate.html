@@ -1,0 +1,69 @@
+<header class="header-background">
+    <nav>
+        <button type="button" class="btn btn-default anchor" id="menu-icon">
+            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </button>
+        <ul style="padding:0px; list-style-type: none">
+            <li><a href="#/userAccountPage" class="current">Account</a></li>
+            <li><a data-toggle="modal" data-target="#signoutModal">SignOut</a></li>
+            <li><a href="#/homePage">Home</a></li>
+        </ul>
+
+    </nav>
+    <h1 class="header-main-title">MovieFlix</h1>
+
+    <div class="dropdown header-page-selection">
+        <a id="dLabelHome" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
+           aria-expanded="false">Home
+            <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu homeMenu" aria-labelledby="dLabelHome">
+            <li><a href="#/userAccountPage">Account</a></li>
+            <li><a data-toggle="modal" data-target="#signoutModal">SignOut</a></li>
+            <li><a href="#/homePage">Home</a></li>
+        </ul>
+    </div>
+
+</header>
+<article class="articleClass"></article>
+<section class="MoviesContainer">
+    <section class="movie-section">
+        <h3 class="movieList-header"><a class="move-title-headers" href="#/searchPage/topRatedMovies">Top Rated Movies
+            <span class="movie-type-selection glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></h3>
+        <ul class="movie-ul " ng-class="hc.topRatedMovieList.length>=6 ? 'blue-btn':'blue-btn-small'">
+            <div class="scrollmenu first-link">
+                <li ng-repeat="movie in hc.topRatedMovieList">
+                    <a ng-href="#/detailsPage/{{movie.id}}"><img class="movie-images" ng-src="{{movie.poster}}"/></a>
+                </li>
+            </div>
+        </ul>
+        <h3 class="movieList-header"><a class="move-title-headers" href="#/searchPage/topRatedSeries">Top Rates Series
+            <span class="movie-type-selection glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></h3>
+        <ul class="movie-ul " ng-class="hc.topRatedSeriesList.length>=6 ? 'blue-btn':'blue-btn-small'">
+            <div class="scrollmenu first-link">
+                <li ng-repeat="movie in hc.topRatedSeriesList ">
+                    <a ng-href="#/detailsPage/{{movie.id}}"><img class="movie-images" ng-src="{{movie.poster}}"/></a>
+                </li>
+            </div>
+        </ul>
+        <h3 class="movieList-header"><a class="move-title-headers" href="#/searchPage/latest">Latest <span
+                class="movie-type-selection glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></h3>
+        <ul class="movie-ul " ng-class="hc.movieList.length>=6 ? 'blue-btn':'blue-btn-small'">
+            <div class="scrollmenu first-link">
+                <li ng-repeat="movie in hc.movieList | orderBy: movieList.released">
+                    <a ng-href="#/detailsPage/{{movie.id}}"><img class="movie-images" ng-src="{{movie.poster}}"/></a>
+                </li>
+            </div>
+        </ul>
+        <h3 class="movieList-header"><a class="move-title-headers" href="#/searchPage/allMovies">All Movies <span
+                class="movie-type-selection glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></h3>
+        <ul class="movie-ul " ng-class="hc.movieList.length>=6 ? 'blue-btn':'blue-btn-small'">
+            <div class="scrollmenu first-link">
+                <li ng-repeat="movie in hc.movieList | filter: movie.type='movie' ">
+                    <a ng-href="#/detailsPage/{{movie.id}}"><img class="movie-images" ng-src="{{movie.poster}}"/></a>
+                </li>
+            </div>
+        </ul>
+    </section>
+</section>

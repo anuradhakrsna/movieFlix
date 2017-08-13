@@ -1,0 +1,94 @@
+.mdp-container{
+    border:1px solid red;
+    overflow:hidden;
+    /*min-height:500px;*/
+    /*margin-top:70px;*/
+
+}
+.mdp-container-content{
+    /*margin-top:70px;*/
+    color:white;
+     padding-top: 70px;
+}
+
+.border-check{
+    /*border:1px solid purple;*/
+    height:300px;
+}
+.img-container{
+    /*width:251px;*/
+    height:370px;
+    /*position:absolute;*/
+}
+
+.img-container img{
+    height:370px;
+    width:100%;
+}
+.mdp-title{
+    margin-bottom:50px;
+}
+
+.movie-breif-details{
+    margin-bottom:35px;
+     padding: 0 13px;
+    /*border:1px solid green;*/
+
+}
+.movie-breif-details h4{
+    color:grey;
+}
+
+.movie-breif-details ul{
+    padding:0px;
+    list-style-type: none;
+}
+/*.movie-breif-details ul li{
+}*/
+
+.details-col{
+    /*border:1px solid white;*/
+    min-height:245px;
+    max-height:auto;
+}
+.mdp-sub-content{
+    /*border:1px solid grey;*/
+}
+
+.mdp-comment-container{
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 black;
+    padding: 0 71px;
+}
+
+@media only screen and (max-width : 640px) {
+    .mdp-comment-container{
+        background-color: transparent;
+        border: 1px solid transparent;
+        box-shadow: 0 0 0 black;
+        padding: 0 20px;
+    }
+    
+    .movie-breif-details{
+        margin-bottom:21px;
+        padding: 0 13px;
+    }
+    .custom-modal-title{
+        font-size:25px;
+    }
+
+    .movie-review-listing-span {
+        width: 100%;
+    }
+    .mdp-title{
+        font-size:21px;
+    }
+   
+}
+@media (min-width : 640px) and (max-width : 800px) {
+     .movie-breif-details{
+        margin-bottom:21px;
+        padding: 0 13px;
+    }
+}

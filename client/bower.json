@@ -1,0 +1,15 @@
+{
+  "name": "ui-seed",
+  "description": "Client Code MovieFlix",
+  "main": "index.js",
+  "authors": [
+    "Anuradha"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-route": "^1.6.2"
+  }
+}

@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="styles/loginPage.css">
+<header class="header-background">
+    <h1 class="header-main-title">MovieFlix</h1>
+</header>
+<article class="articleClass">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-5 col-sm-offset-3 col-xs-8 col-xs-offset-2 col-lg-offset-4 col-md-offset-4 signin-container">
+            <h1>Sign In</h1>
+            <form class="form-horizontal" name="loginForm" ng-init="lc.cleanup=false" ng-submit="lc.loginCheck()"
+                  novalidate>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email </label>
+                    <input type="email" class="form-control" name="emailInput" id="exampleInputEmail1"
+                           ng-model="lc.login.username" placeholder="Email" required>
+                    <div ng-if="loginForm.emailInput.$dirty" ng-hide="loginForm.emailInput.$valid || lc.cleanup ">
+                        <p ng-show="loginForm.emailInput.$error.required" style="margin:0px" class="errorMsg">Please
+                            enter your email address. </p>
+                        <p ng-show="loginForm.emailInput.$error.email" style="margin:0px" class="errorMsg">Please enter
+                            a valid email address. </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+                           ng-model="lc.login.password" placeholder="Password" required>
+                    <div ng-messages="loginForm.password.$error" ng-if="loginForm.password.$dirty"
+                         ng-hide="loginForm.password.$valid || lc.cleanup">
+                        <p ng-message="required" class="errorMsg" style="margin:0px">Please enter your Password. </p>
+                    </div>
+                </div>
+
+                <p class="errorMsg" style="margin:0px;text-align:center;">{{lc.ErrorMsg}}</p>
+                <a type="submit" ng-click="lc.loginCheck()" style="width:100%;margin-bottom: 22px;"
+                   class="btn btn-danger" ng-disabled="loginForm.$invalid ">Submit</a>
+                <span style="margin-right:10px">New to Movieflix?</span><a href="#/signupPage">Sign Up now.</a>
+            </form>
+        </div>
+
+    </div>
+</article>
