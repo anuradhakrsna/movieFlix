@@ -100,4 +100,11 @@ public class MovieRepositoryImp implements MovieRepository {
 		return movies;
 	}
 
+	@Override
+	public List<Movies> findLatest() {
+		TypedQuery<Movies> query = em.createNamedQuery("Movie.latestShows", Movies.class);
+		List<Movies> movies = query.getResultList();
+		return movies;
+	}
+
 }

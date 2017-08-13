@@ -22,6 +22,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 		@NamedQuery(name = "Movie.findById", query = "SELECT DISTINCT m FROM Movies m WHERE m.id = :pId "),
 		@NamedQuery(name = "Movie.topRatedShows", query = "SELECT DISTINCT m FROM Movies m JOIN m.imdb i "
 				+ "join m.type t where t.type = :pType ORDER BY i.imdbRating DESC"),
+		@NamedQuery(name = "Movie.latestShows", query = "SELECT DISTINCT m FROM Movies m ORDER BY m.released DESC"),
 		@NamedQuery(name = "Movie.sortByImdbRating", query = "SELECT DISTINCT m FROM Movies m "
 				+ "JOIN m.imdb i ORDER BY i.imdbRating ASC "),
 		@NamedQuery(name = "Movie.sortByTitle", query = "SELECT DISTINCT m FROM Movies m ORDER BY m.title "),

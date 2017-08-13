@@ -202,4 +202,9 @@ public class MovieServiceImp implements MovieService {
 		return repository.findTopRated(type);
 	}
 
+	@Override
+	public List<Movies> findLatest() {
+		return repository.findLatest();
+	}
+
 }

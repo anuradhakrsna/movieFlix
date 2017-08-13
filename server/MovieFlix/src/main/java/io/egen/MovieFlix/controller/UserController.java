@@ -29,16 +29,22 @@ public class UserController {
 	public Users findOne(@PathVariable("id") String userid) {
 		return service.findbyId(userid);
 	}
-
+	
 	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Users create(@RequestBody Users user) {
 		return service.create(user);
+	}
+	
+	@RequestMapping(value="login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public Users login(@RequestBody Users user) {
+		return service.login(user);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, path = "{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Users update(@PathVariable("id") String empid, @RequestBody Users user) {
 		return service.update(empid, user);
 	}
+	
 
 	@RequestMapping(method = RequestMethod.DELETE, path = "{id}")
 	public void delete(@PathVariable("id") String userid) {

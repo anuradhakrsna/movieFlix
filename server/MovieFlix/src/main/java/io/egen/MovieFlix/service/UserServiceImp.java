@@ -1,5 +1,8 @@
 package io.egen.MovieFlix.service;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -17,7 +20,7 @@ public class UserServiceImp implements UserService {
 
 	@Autowired
 	UserRepository repository;
-
+	
 	@Override
 	public List<Users> findAll() {
 		return repository.findAll();
@@ -40,6 +43,30 @@ public class UserServiceImp implements UserService {
 			throw new AlreadyExistsException(
 					"the following User already exists with the email id = " + user.getEmail());
 		}
+		
+		Users existingUser = repository.findByUserName(user.getUsername());
+		if (existingUser != null) {
+			throw new AlreadyExistsException(
+					"the following User already exists with the username = " + user.getUsername());
+		}
+
+		try {
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(user.getPassword().getBytes(StandardCharsets.UTF_8));
+			StringBuilder hexString = new StringBuilder();
+			for (int i = 0; i < hash.length; i++) {
+				String hex = Integer.toHexString(0xFF & hash[i]);
+				if (hex.length() == 1) {
+					hexString.append('0');
+				}
+				hexString.append(hex);
+			}
+			user.setPassword(hexString.toString());
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			return null;
+		}
+
 		return repository.create(user);
 	}
 
@@ -50,6 +77,24 @@ public class UserServiceImp implements UserService {
 		if (existing == null) {
 			throw new NotFoundException("User with id= " + id + " not found");
 		}
+		
+		try {
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(user.getPassword().getBytes(StandardCharsets.UTF_8));
+			StringBuilder hexString = new StringBuilder();
+			for (int i = 0; i < hash.length; i++) {
+				String hex = Integer.toHexString(0xFF & hash[i]);
+				if (hex.length() == 1) {
+					hexString.append('0');
+				}
+				hexString.append(hex);
+			}
+			user.setPassword(hexString.toString());
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
 		return repository.update(user);
 	}
 
@@ -62,7 +107,39 @@ public class UserServiceImp implements UserService {
 		}
 
 		repository.delete(existing);
-
 	}
-
+	
+	@Override
+	@Transactional
+	public Users login(Users user) {
+		
+		Users existing = repository.findByEmail(user.getEmail());
+		if (existing == null) {
+			throw new AlreadyExistsException(
+					"No user with email = " + user.getEmail());
+		}
+		
+		if(user.getPassword() == null)
+			return null;
+		
+		try {
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(user.getPassword().getBytes(StandardCharsets.UTF_8));
+			StringBuilder hexString = new StringBuilder();
+			for (int i = 0; i < hash.length; i++) {
+				String hex = Integer.toHexString(0xFF & hash[i]);
+				if (hex.length() == 1) {
+					hexString.append('0');
+				}
+				hexString.append(hex);
+			}
+			if(existing.getPassword().equals(hexString.toString())) {
+				return existing;
+			}
+			return null;
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

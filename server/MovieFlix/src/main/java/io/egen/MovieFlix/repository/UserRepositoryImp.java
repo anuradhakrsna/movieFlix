@@ -38,6 +38,18 @@ public class UserRepositoryImp implements UserRepository {
 		}
 		return null;
 	}
+	
+	@Override
+	public Users findByUserName(String username) {
+		TypedQuery<Users> query = em.createNamedQuery("User.finByUsername", Users.class);
+		query.setParameter("pUsername", username);
+		List<Users> users = query.getResultList();
+		if (users != null && users.size() == 1) {
+			return users.get(0);
+
+		}
+		return null;
+	}
 
 	@Override
 	public Users create(Users user) {
@@ -55,5 +67,7 @@ public class UserRepositoryImp implements UserRepository {
 		em.remove(user);
 
 	}
+	
+	
 
 }

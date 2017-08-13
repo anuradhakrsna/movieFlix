@@ -58,8 +58,14 @@ public class UserRatingsServiceImp implements UserRatingsService {
 			throw new NotFoundException("Movie with id : " + uratings.getMovies().getId() + " not found");
 		}
 		uratings.setMovies(existingMovies);
-
-		return repository.create(uratings);
+		
+		UserRatings existingRating = repository.findRating(existingUser, existingMovies);
+		if(null == existingRating )	
+			return repository.create(uratings);
+		else {
+			existingRating.setUratings(uratings.getUratings());
+			return repository.update(existingRating);
+		}
 	}
 
 	@Override

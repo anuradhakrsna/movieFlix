@@ -13,7 +13,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table
 @NamedQueries({ @NamedQuery(name = "User.findAll", query = "SELECT u FROM Users u ORDER BY u.email ASC"),
-		@NamedQuery(name = "User.finByEmail", query = "SELECT u FROM Users u WHERE u.email=:pEmail") })
+		@NamedQuery(name = "User.finByEmail", query = "SELECT u FROM Users u WHERE u.email=:pEmail"),
+		@NamedQuery(name = "User.finByUsername", query = "SELECT u FROM Users u WHERE u.username=:pUsername") })
 public class Users {
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")
@@ -22,6 +23,8 @@ public class Users {
 
 	private String firstName;
 	private String lastName;
+
+	@Column(unique = true)
 	private String username;
 	private String password;
 

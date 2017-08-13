@@ -15,8 +15,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Table
 @NamedQueries({
 		@NamedQuery(name = "UserComments.findAll", query = "SELECT uc FROM UserComments uc ORDER BY uc.time DESC"),
-		@NamedQuery(name = "UserComments.findAllByMovie", query = "SELECT uc FROM UserComments uc WHERE uc.movies=:pMovies"),
-		@NamedQuery(name = "UserComments.findAllByUsers", query = "SELECT uc FROM UserComments uc WHERE uc.users=:pUsers") })
+		@NamedQuery(name = "UserComments.findAllByMovie", query = "SELECT uc FROM UserComments uc WHERE uc.movies=:pMovies ORDER BY uc.time DESC"),
+		@NamedQuery(name = "UserComments.findAllByUsers", query = "SELECT uc FROM UserComments uc WHERE uc.users=:pUsers ORDER BY uc.time DESC") })
 public class UserComments {
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")

@@ -13,6 +13,8 @@ public interface MovieRepository {
 	public List<Movies> findByFilter(String type, int year, String genre);
 
 	public List<Movies> findTopRated(String type);
+	
+	public List<Movies> findLatest();
 
 	public Movies create(Movies movie);
 

@@ -11,6 +11,8 @@ public interface UserRepository {
 	public Users findById(String id);
 
 	public Users findByEmail(String email);
+	
+	public Users findByUserName(String username);
 
 	public Users create(Users user);
 

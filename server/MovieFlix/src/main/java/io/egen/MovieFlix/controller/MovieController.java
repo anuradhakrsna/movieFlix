@@ -43,6 +43,11 @@ public class MovieController {
 			@RequestParam(value = "type", required = false, defaultValue = "movie") String type) {
 		return service.findTopRated(type);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "latest", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Movies> findLatest(){			
+		return service.findLatest();
+	}
 
 	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Movies create(@RequestBody Movies movie) {
