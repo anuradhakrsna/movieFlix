@@ -21,8 +21,6 @@ Project pages
 
 ![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/searchResultUpload.png)
 
-![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/SearchPage%201.JPG)
-
 ![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/SearchPage%202.JPG)
 
 ![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/MobileView.JPG)
