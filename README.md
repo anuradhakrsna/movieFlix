@@ -19,6 +19,12 @@ Project pages
 
 ![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/MovieDetails.JPG)
 
+![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/SearchPage%201.JPG)
+
+![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/SearchPage%202.JPG)
+
+![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/MobileView.JPG)
+
 ![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/AccountDetails.JPG)
 
 ![alt text](https://github.com/anuradhakrsna/movieFlix/blob/master/Snapshots/CancelMembership.JPG)
